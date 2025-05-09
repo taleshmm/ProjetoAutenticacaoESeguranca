@@ -1,5 +1,5 @@
 from src.views.http_types.http_request import HttpRequest
-from src.views.http_types.http_response import HtppResponse
+from src.views.http_types.http_response import HttpResponse
 from .user_register_view import UserRegisterView
 import pytest
 
@@ -18,7 +18,7 @@ def test_handle_user_register():
     
     response = user_register_view.handle(request)
     
-    assert isinstance(response, HtppResponse)
+    assert isinstance(response, HttpResponse)
     assert response.status_code == 201
     assert response.body == {"data": {"test_test": "something"}}
     
